@@ -12,7 +12,6 @@ import {
   Clock, 
   Info, 
   Trash2,
-  Download,
   Share2
 } from 'lucide-react';
 import { format, parseISO } from 'date-fns';
