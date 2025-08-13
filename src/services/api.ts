@@ -1,15 +1,15 @@
+/// <reference types="vite/client" />
 import { 
   LoginRequest, 
   RegisterRequest, 
   AuthResponse, 
   ItineraryRequest, 
   ItineraryResponse,
-  ItinerariesResponse,
-  Itinerary,
-  ApiError 
+  ItinerariesResponse
 } from '../types';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.API_BASE_URL;
+
 
 class ApiError extends Error {
   constructor(public status: number, public message: string, public details?: string) {
