@@ -75,7 +75,22 @@ project/
 4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## Environment Variables
-No custom `.env` is required unless you want to change the API base URL. Update `API_BASE_URL` in `src/services/api.ts` as needed.
+
+You must set the API base URL using a Vite environment variable in a `.env` file at the project root:
+
+```
+VITE_BASE_URL=http://localhost:8000
+```
+
+This variable is required and is used by the frontend to connect to your backend API. You can change it to point to any backend URL as needed.
+
+**Note:** Only variables prefixed with `VITE_` are exposed to the frontend in Vite projects. Do not use `API_BASE_URL` or any other name without the `VITE_` prefix.
+
+In your code, always access it as:
+
+```ts
+const API_BASE_URL = import.meta.env.VITE_BASE_URL;
+```
 
 ## Customization
 - **Tailwind Colors:** Edit `tailwind.config.js` to change theme colors.

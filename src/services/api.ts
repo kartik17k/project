@@ -8,7 +8,7 @@ import {
   ItinerariesResponse
 } from '../types';
 
-const API_BASE_URL = import.meta.env.API_BASE_URL;
+const API_BASE_URL = import.meta.env.VITE_BASE_URL;
 
 
 class ApiError extends Error {
